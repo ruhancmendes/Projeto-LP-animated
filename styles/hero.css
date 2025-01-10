@@ -76,75 +76,75 @@ section.hero {
   }
 
   /* patins */
-  & > div:nth-child(2){
+  & > div:nth-child(2) {
     display: block;
     width: 100%;
     max-width: 30.5rem;
     height: 30.5rem;
 
-    & .content{
-        width: 100%;
-        height: 100%;
-        position: relative;
+    & .content {
+      width: 100%;
+      height: 100%;
+      position: relative;
     }
 
-    & img{
-        position: absolute;
-        width: 100%;
+    & img {
+      position: absolute;
+      width: 100%;
     }
 
-    & img[src*="ellipse"]{
-        width: 94%;
-        top: 3%;
-        left: 3%;
+    & img[src*="ellipse"] {
+      width: 94%;
+      top: 3%;
+      left: 3%;
 
-        transform: translateX(200%);
-        animation: slideIn 3s 200ms ease forwards;
+      transform: translateX(200%);
+      animation: slideIn 3s 200ms ease forwards;
     }
 
-    & img[src*="patins"]{
-        z-index: 1;
+    & img[src*="patins"] {
+      z-index: 1;
 
-        transform: translateX(200%);
-        animation: slideIn 3s ease forwards;
+      transform: translateX(200%);
+      animation: slideIn 3s ease forwards;
     }
 
-    & img[src*="stars-1"]{
-        max-width: 5.5rem;
-        top: 30%;
-        z-index: 0;
+    & img[src*="stars-1"] {
+      max-width: 5.5rem;
+      top: 30%;
+      z-index: 0;
 
-        opacity: 0;
-        transform: translateX(400%);
-        animation: slideIn 2s 800ms ease both, appear 100ms 800ms both;
+      opacity: 0;
+      transform: translateX(400%);
+      animation: slideIn 2s 800ms ease both, appear 100ms 800ms both;
     }
 
-    & img[src*="stars-2"]{
-        max-width: 2.5rem;
-        right: 0;
-        bottom: 35%;
+    & img[src*="stars-2"] {
+      max-width: 2.5rem;
+      right: 0;
+      bottom: 35%;
 
-        transform: translateX(400%);
-        animation: slideIn 2.2s 800ms ease both;
+      transform: translateX(400%);
+      animation: slideIn 2.2s 800ms ease both;
     }
   }
 }
 
 /* animation */
 
-@keyframes slideIn{
-    50% {
-        transform: translateX(-20px);
-    }
-    100%{
-        transform: translateX(0);
-    }
+@keyframes slideIn {
+  50% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-@keyframes appear{
-    to {
-        opacity: 1;
-    }
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
@@ -210,5 +210,97 @@ section.hero {
 
   100% {
     transform: translateY(-15rem);
+  }
+}
+
+@media (width <= 23.5em) {
+  section.hero {
+    max-width: 23.5rem;
+    flex-direction: column-reverse;
+    justify-content: center;
+
+    & h1 {
+      max-width: 20rem;
+    }
+
+    & h1 div {
+      height: 2.5rem;
+      width: min-content;
+    }
+
+    & .buttons{
+      flex-direction: column-reverse;
+      gap: 1rem;
+    }
+
+    & > div:nth-child(2) {
+      height: 19.5rem;
+    }
+  }
+
+  @keyframes slideUp {
+    0%,
+    22% {
+      transform: translateY(0);
+    }
+  
+    /* bounce */
+    23% {
+      transform: translateY(calc(-2.5rem - 7.5px));
+    }
+    25% {
+      transform: translateY(calc(-2.5rem + 5px));
+    }
+    27% {
+      transform: translateY(calc(-2.5rem - 2.5px));
+    }
+    29% {
+      transform: translateY(calc(-2.5rem + 2.5px));
+    }
+    /* bounce */
+  
+    33%,
+    55% {
+      transform: translateY(-2.5rem);
+    }
+  
+    /* bounce */
+    56% {
+      transform: translateY(calc(-5rem - 7.5px));
+    }
+    58% {
+      transform: translateY(calc(-5rem + 5px));
+    }
+    60% {
+      transform: translateY(calc(-5rem - 2.5px));
+    }
+    62% {
+      transform: translateY(calc(-5rem + 2.5px));
+    }
+    /* bounce */
+  
+    66%,
+    88% {
+      transform: translateY(-5rem);
+    }
+  
+    /* bounce */
+    89% {
+      transform: translateY(calc(-7.5rem - 7.5px));
+    }
+    91% {
+      transform: translateY(calc(-7.5rem + 5px));
+    }
+    93% {
+      transform: translateY(calc(-7.5rem - 2.5px));
+    }
+    95% {
+      transform: translateY(calc(-7.5rem + 2.5px));
+    }
+    /* bounce */
+  
+    100% {
+      transform: translateY(-7.5rem);
+    }
   }
 }

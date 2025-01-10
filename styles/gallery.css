@@ -108,3 +108,21 @@ section.gallery {
         transform: translateY(100%);
     }
 }
+
+@media (width <= 23.5em) {
+  section.gallery {
+    max-width: 23.5rem;
+    justify-content: center;
+
+    & .content{
+      display: flex;
+      flex-direction: column;
+    }
+
+    & figure{
+      & > img{
+        height: 16rem;
+      }
+    }
+  }
+}
